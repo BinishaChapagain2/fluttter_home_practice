@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/Inkwellwidget.dart';
+import 'package:flutter_practice/scrollviews.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: InkStudy(),
+      home: Scrollviews(),
     );
   }
 }
