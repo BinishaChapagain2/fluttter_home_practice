@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/scrollviews.dart';
+import 'package:flutter_practice/margin&padding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: Scrollviews(),
+      home: MarginPaddingWidget(),
     );
   }
 }
