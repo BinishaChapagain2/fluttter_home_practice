@@ -182,7 +182,7 @@ class Tripbookpage extends StatelessWidget {
                                     children: [
                                       Icon(Icons.train),
                                       Text(
-                                        "Dhangadi",
+                                        "Train",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -201,6 +201,78 @@ class Tripbookpage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
 
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 200,
+                  width: double.infinity,
+
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 200,
+                          width: 210,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Travel Smart, Stay Comfortable",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "Plan Your Trip, book your stay, and get moving-all in one app",
+                              ),
+                              Row(
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      "Get Started",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      Container(
+                        height: 200,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/pngwing.png"),
+
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 8),
               // for button part
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -252,13 +324,114 @@ class Tripbookpage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {},
-
                     child: Text(
                       "Villa",
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              // Recommendation part start
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Recommendations",
+                          style: TextStyle(
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        Text(
+                          "See all",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  //below picture image
+                  SizedBox(
+                    height: 220, // Set a fixed height for the ListView
+                    child: ListView(
+                      scrollDirection:
+                          Axis.horizontal, // Use horizontal scrolling for better layout
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 200,
+                              width: 200,
+
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/binisha.jpg",
+                                  ),
+                                  fit: BoxFit.fitWidth,
+                                ),
+
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            Container(
+                              height: 200,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/binisha.jpg",
+                                  ),
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            Container(
+                              height: 200,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/binisha.jpg",
+                                  ),
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            Container(
+                              height: 200,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/binisha.jpg",
+                                  ),
+                                  fit: BoxFit.fitWidth,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
