@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
-  final String name;
-
-  const SecondScreen({required this.name, super.key});
+  final List<String> fruitName;
+  const SecondScreen({required this.fruitName, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +10,13 @@ class SecondScreen extends StatelessWidget {
       appBar: AppBar(title: Text("Second screen")),
       body: Column(
         children: [
-          Text(name),
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              itemBuilder: (ctx, i) => Text(fruitName[i]),
+              itemCount: fruitName.length,
+            ),
+          ),
           Center(
             child: FilledButton(
               onPressed: () {

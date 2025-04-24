@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/navigate/second_screen.dart';
 
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+class FirstScreen extends StatefulWidget {
+  FirstScreen({super.key});
+
+  @override
+  State<FirstScreen> createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  final GlobalKey<FormState> _addFruitFormKey = GlobalKey();
+
+  final List<String> fruitName = [];
 
   @override
   Widget build(BuildContext context) {
@@ -10,6 +20,7 @@ class FirstScreen extends StatelessWidget {
       body: Column(
         children: [
           Form(
+            key: _addFruitFormKey,
             child: Column(
               spacing: 10,
               children: [
@@ -28,9 +39,51 @@ class FirstScreen extends StatelessWidget {
                       return null;
                     }
                   },
+                  onSaved: (newvalue) {
+                    setState(() {
+                      fruitName.add(newvalue!);
+                    });
+                  },
                 ),
-                FilledButton.tonal(onPressed: () {}, child: Text("Add")),
+
+                FilledButton.tonal(
+                  onPressed: () {
+                    if (!_addFruitFormKey.currentState!.validate()) {
+                      return;
+                    }
+                    _addFruitFormKey.currentState!.save();
+                  },
+                  child: Text("Add"),
+                ),
+
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      fruitName.clear();
+                    });
+                  },
+                  child: Text("Clear"),
+                ),
               ],
+            ),
+          ),
+
+          FilledButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SecondScreen(fruitName: fruitName),
+                ),
+              );
+            },
+            child: Text("Go to next Screen"),
+          ),
+
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              itemBuilder: (ctx, i) => Text(fruitName[i]),
+              itemCount: fruitName.length,
             ),
           ),
         ],
