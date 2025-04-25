@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/navigate/first_screen.dart';
+import 'package:flutter_practice/app_routes.dart';
+import 'package:flutter_practice/named_navigate/named_firstscreen.dart';
+import 'package:flutter_practice/named_navigate/named_secondscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +35,11 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: FirstScreen(),
+      home: NamedFirstscreen(),
+      routes: {
+        AppRoutes.firstScreen: (ctx) => NamedFirstscreen(),
+        AppRoutes.secondScreen: (ctx) => NamedSecondscreen(),
+      },
     );
   }
 }
